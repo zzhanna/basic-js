@@ -13,19 +13,13 @@ import { NotImplementedError } from '../extensions/index.js';
  *
  */
 export default function getSumOfDigits(n) {
-  // let res = 0;
-  // res = n.toString().split('').reduce((a, b) => +a + +b);
+  let res = 0;
+  res = n.toString().split('').reduce((a, b) => +a + +b);
  
-  //   if (res >= 10) {
-  //    res = getSumOfDigits(res);
-  //  }
-  //  return res;
+    if (res >= 10) {
+     res = getSumOfDigits(res);
+   }
+   return res;
 
-  let str = String(n);
-  while (str.length !== 1) {
-    str = String(str.split('').reduce((acc, val) => acc + Number(val), 0));
-  }
-  return Number(str);
-
-
+ 
  }
